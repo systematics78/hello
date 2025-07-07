@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="27.2.0">
   <diagram name="flink_reference_arch" id="t__8cAzvdVz3zwjNPJHr">
-    <mxGraphModel dx="2488" dy="-292" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2833" dy="-122" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -333,6 +333,111 @@
           <mxGeometry x="892.5" y="50.659999999999854" width="229.1644638270843" height="51.84346153846153" as="geometry" />
         </mxCell>
         <mxCell id="k8rTpQtQXNA1Lfismtyz-59" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="k8rTpQtQXNA1Lfismtyz-60" source="k8rTpQtQXNA1Lfismtyz-51" target="k8rTpQtQXNA1Lfismtyz-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-61" value="Databricks Workspace&#xa;copa-dbx-prod" style="swimlane;horizontal=0;fillColor=#e2f0d9;strokeColor=#274e13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="-380" y="3720" width="1260" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-62" value="DBX Cluster 1&#xa;Pool: DS8_v2&#xa;8 nodes, 64 vCPU, 448GB RAM" style="rounded=1;whiteSpace=wrap;fillColor=#b6d7a8;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-61">
+          <mxGeometry x="40" y="40" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-63" value="DBX Cluster 2&#xa;Pool: DS8_v2&#xa;8 nodes, 64 vCPU, 448GB RAM" style="rounded=1;whiteSpace=wrap;fillColor=#b6d7a8;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-61">
+          <mxGeometry x="40" y="120" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-64" value="Scheduled Jobs&#xa;Delta Pipelines&#xa;Notebooks" style="rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-61">
+          <mxGeometry x="360" y="120" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-65" value="Unity Catalog&#xa;SCIM RBAC&#xa;Fine-grained Access" style="rounded=1;whiteSpace=wrap;fillColor=#cfe2f3;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-61">
+          <mxGeometry x="1050" y="120" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-67" value="Azure Blob&#xa;Raw/Enriched Layers" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-61">
+          <mxGeometry x="370" y="250" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-68" value="SOX Audit Log&#xa;/dbfs/copa/soxlog&#xa;Ret: 1y" style="rounded=1;whiteSpace=wrap;fillColor=#ffe599;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-61">
+          <mxGeometry x="600" y="250" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-69" value="Prometheus Exporter&#xa;Node &amp; Job Metrics" style="rounded=1;whiteSpace=wrap;fillColor=#ddebf7;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-61">
+          <mxGeometry x="820" y="220" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-70" value="Grafana Dashboards" style="rounded=1;whiteSpace=wrap;fillColor=#ddebf7;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-61">
+          <mxGeometry x="1065" y="220" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-75" value="Azure Key Vault&#xa;Secrets, Credentials" style="rounded=1;whiteSpace=wrap;fillColor=#f3f3f3;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-61">
+          <mxGeometry x="610" y="20" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-88" value="Secrets/Keys" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="k8rTpQtQXNA1Lfismtyz-61" source="k8rTpQtQXNA1Lfismtyz-64" target="k8rTpQtQXNA1Lfismtyz-75">
+          <mxGeometry x="-0.0008" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-76" value="Azure Backup Vault&#xa;Retention: 180d&#xa;Geo-Redundant" style="rounded=1;whiteSpace=wrap;fillColor=#d9ead3;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-61">
+          <mxGeometry x="610" y="340" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-90" value="Backup" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="k8rTpQtQXNA1Lfismtyz-61" source="k8rTpQtQXNA1Lfismtyz-68" target="k8rTpQtQXNA1Lfismtyz-76">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-66" value="DBFS Storage&#xa;Premium, /mnt/copa" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-61">
+          <mxGeometry x="930" y="340" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-80" value="DBFS Write/Read" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="k8rTpQtQXNA1Lfismtyz-61" source="k8rTpQtQXNA1Lfismtyz-64" target="k8rTpQtQXNA1Lfismtyz-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-89" value="Backup" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="k8rTpQtQXNA1Lfismtyz-61" source="k8rTpQtQXNA1Lfismtyz-66" target="k8rTpQtQXNA1Lfismtyz-76">
+          <mxGeometry x="0.0037" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-94" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-71">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="250" y="4130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-71" value="Azure VNET&#xa;10.9.0.0/16" style="rounded=1;whiteSpace=wrap;fillColor=#fce5cd;" vertex="1" parent="1">
+          <mxGeometry x="-380" y="4170" width="1260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-74" value="AAD SCIM&#xa;User/Group Mapping&#xa;SAML, OIDC" style="rounded=1;whiteSpace=wrap;fillColor=#cfe2f3;" vertex="1" parent="1">
+          <mxGeometry x="680" y="3730" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-77" value="Runs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-62" target="k8rTpQtQXNA1Lfismtyz-64">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-78" value="Runs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-63" target="k8rTpQtQXNA1Lfismtyz-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-79" value="Data Access" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-64" target="k8rTpQtQXNA1Lfismtyz-65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-81" value="Blob Write/Read" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-64" target="k8rTpQtQXNA1Lfismtyz-67">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-82" value="SOX Log" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-64" target="k8rTpQtQXNA1Lfismtyz-68">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-83" value="Metrics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-64" target="k8rTpQtQXNA1Lfismtyz-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-84" value="Dashboards" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-69" target="k8rTpQtQXNA1Lfismtyz-70">
+          <mxGeometry x="-0.2" y="-25" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-87" value="SCIM Sync" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-65" target="k8rTpQtQXNA1Lfismtyz-74">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-92" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.468;entryY=1.016;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-72" target="k8rTpQtQXNA1Lfismtyz-71">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="194.00000000000045" y="4280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-72" value="Subnet: dbx-copa&#xa;10.9.2.0/24" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="79" y="4290" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-73" value="Azure Firewall&#xa;DNAT+SNAT AppGW WAF" style="rounded=1;whiteSpace=wrap;fillColor=#f6b26b;" vertex="1" parent="1">
+          <mxGeometry x="456" y="4290" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-86" value="Firewall Policy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-72" target="k8rTpQtQXNA1Lfismtyz-73">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
