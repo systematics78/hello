@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="27.2.0">
   <diagram name="flink_reference_arch" id="t__8cAzvdVz3zwjNPJHr">
-    <mxGraphModel dx="2833" dy="-122" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2196" dy="-436" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -438,6 +438,66 @@
           <mxGeometry x="456" y="4290" width="200" height="40" as="geometry" />
         </mxCell>
         <mxCell id="k8rTpQtQXNA1Lfismtyz-86" value="Firewall Policy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-72" target="k8rTpQtQXNA1Lfismtyz-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-97" value="Databricks Reference Architecture" style="swimlane;horizontal=0;fillColor=#e2f0d9;strokeColor=#274e13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="-580" y="4470" width="1200" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-98" value="Kafka Cluster (EMP Kafka)&#xa;Topics: UDR MM, UDR BM, S/L MM, S/L BM, OM MM, OM BM, EPC MM, EPC BM " style="rounded=1;whiteSpace=wrap;fillColor=#ddebf7;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-97">
+          <mxGeometry x="60" y="110" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-99" value="API Gateway&#xa;REST/JDBC/SOAP&#xa;OAuth2, mTLS" style="rounded=1;whiteSpace=wrap;fillColor=#ddebf7;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-97">
+          <mxGeometry x="60" y="220" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-101" value="Databricks Cluster&#xa;copa-dbx-prod&#xa;16x DS8_v2, 128 vCPU/896GB RAM&#xa;Auto-scaling, Jobs, Notebooks&#xa;RBAC: AAD, SCIM" style="rounded=1;whiteSpace=wrap;fillColor=#e2f0d9;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-97">
+          <mxGeometry x="320" y="140" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-102" value="BRF+ Rules Engine&#xa;/executeRule (mTLS)&#xa;SOX ZONE" style="rounded=1;whiteSpace=wrap;fillColor=#d5e8d4;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-97">
+          <mxGeometry x="370" y="340" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-103" value="SAP S/4HANA&#xa;IDOC, RFC, TLS 443" style="rounded=1;whiteSpace=wrap;fillColor=#f8cecc;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-97">
+          <mxGeometry x="620" y="345" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-104" value="MFT SFTP&#xa;SOX boundary, DMZ" style="rounded=1;whiteSpace=wrap;fillColor=#f8cecc;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-97">
+          <mxGeometry x="830" y="350" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-105" value="DBFS State Store&#xa;/dbfs/copa/state&#xa;100GB/day" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-97">
+          <mxGeometry x="365" y="30" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-106" value="SOX Audit Log&#xa;/dbfs/copa/soxlog&#xa;Immutable, Ret:1y" style="rounded=1;whiteSpace=wrap;fillColor=#fff2cc;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-97">
+          <mxGeometry x="610" y="30" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-107" value="Prometheus&#xa;Monitoring&#xa;copa-monitor" style="rounded=1;whiteSpace=wrap;fillColor=#ddebf7;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-97">
+          <mxGeometry x="850" y="30" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-108" value="Azure Backup&#xa;Retention: 180d&#xa;Geo-redundant" style="rounded=1;whiteSpace=wrap;fillColor=#e2f0d9;" vertex="1" parent="k8rTpQtQXNA1Lfismtyz-97">
+          <mxGeometry x="1050" y="70" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-109" value="REST/JDBC/SOAP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-99" target="k8rTpQtQXNA1Lfismtyz-101">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-110" value="Avro, SASL_SSL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-98" target="k8rTpQtQXNA1Lfismtyz-101">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-111" value="/executeRule (mTLS)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-101" target="k8rTpQtQXNA1Lfismtyz-102">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-112" value="IDOC, RFC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-101" target="k8rTpQtQXNA1Lfismtyz-103">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-113" value="SFTP, CSV" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-101" target="k8rTpQtQXNA1Lfismtyz-104">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-114" value="State Write" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-101" target="k8rTpQtQXNA1Lfismtyz-105">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-115" value="SOX Log Event" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-101" target="k8rTpQtQXNA1Lfismtyz-106">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-116" value="Metrics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-101" target="k8rTpQtQXNA1Lfismtyz-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="k8rTpQtQXNA1Lfismtyz-117" value="Backup" style="edgeStyle=orthogonalEdgeStyle;rounded=0;fontColor=none;noLabel=1;" edge="1" parent="1" source="k8rTpQtQXNA1Lfismtyz-101" target="k8rTpQtQXNA1Lfismtyz-108">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
